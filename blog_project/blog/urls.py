@@ -9,5 +9,5 @@ urlpatterns = [
     path('article/<int:pk>/', ArticleDetailView.as_view(), name='article-detail'),
     path('article/new/', ArticleCreateView.as_view(), name='article-create'),
     path('article/update/<int:pk>', ArticleUpdateView.as_view(), name='article-update'),
-    path('article/delete/<int:pk>', ArticleDeleteView.as_view(), name='article-delete'),
+    path('article/delete/<int:pk>', ArticleDeleteView.as_view(), name='article-delete')
 ]

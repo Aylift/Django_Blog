@@ -7,4 +7,9 @@ class ArticleSerializer(serializers.ModelSerializer):
         model = Article
         fields = '__all__'
 
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        representation['date_posted'] = instance.date_posted.strftime('%d-%m-%Y %H:%M:%S')
+        return representation
+
 print(Article.author)

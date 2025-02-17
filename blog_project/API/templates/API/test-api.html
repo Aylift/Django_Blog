@@ -2,21 +2,21 @@
 
 {% block script %}
 <script>
-function getBaseUrl(path){
+function getBaseUrl(path) {
     let protocol = window.location.protocol;
     let host = window.location.hostname;
     let port = window.location.port;
 
-    return `${protocol}//${host ? host : ""}:${port}${path}`
+    return `${protocol}//${host}${port ? `:${port}` : ''}${path}`;
 }
 
-async function getArticles(){
+async function getArticles() {
     let articlesResp = await fetch(getBaseUrl('/api/articles/'));
 
     let data = await articlesResp.json();
     data.forEach((article, index) => {
-        console.log('===================')
-        console.log(`Article no ${index}`)
+        console.log('===================');
+        console.log(`Article no ${index}`);
         console.log(`Article title: ${article.title}`);
         console.log(`Article content: ${article.content}`);
         console.log(`Article date posted: ${article.date_posted}`);
@@ -24,12 +24,39 @@ async function getArticles(){
     });
 }
 
-async function getArticle(value){
+async function getArticle(value) {
     let articleResp = await fetch(getBaseUrl(`/api/article/${value}`));
     let data = await articleResp.json();
 
     console.log(data);
+}
 
+async function addNewArticle() {
+    let newArticle = {
+        'id': 6,
+        'title': 'Sent-test',
+        'content': 'Test Content',
+        'author': 3,
+        'date_posted': '2021-05-02T12:00:56Z'
+    };
+
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    let addingResp = await fetch(getBaseUrl('/api/article/create/'), {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie("csrftoken")
+        },
+        body: JSON.stringify(newArticle)
+    });
+
+    let result = await addingResp.json();
+    console.log(result);
 }
 </script>
 {% endblock %}
@@ -41,4 +68,7 @@ async function getArticle(value){
 
     <input id="article-inputer"/>
     <button onclick="getArticle(document.getElementById('article-inputer').value)">Get Article</button>
+    <br/><br/>
+
+    <button onclick="addNewArticle()">Add New Article</button>
 {% endblock %}

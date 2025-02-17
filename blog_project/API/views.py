@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework.viewsets import generics
 from .serializers import ArticleSerializer
 from blog.models import Article
+from rest_framework.permissions import IsAuthenticated
 
 
 class GetAllArticles(generics.ListAPIView):
@@ -16,6 +17,8 @@ class GetArticle(generics.RetrieveAPIView):
 
 class CreateArticle(generics.CreateAPIView):
     serializer_class = ArticleSerializer
+    permission_classes = [IsAuthenticated]
+
 
 def test_api(request):
     return render(request, 'API/test-api.html')

@@ -1,0 +1,13 @@
+site_name: Django Blog App Documentation
+site_url: https://yourusername.github.io/django-blog-app
+repo_url: https://github.com/yourusername/django-blog-app
+theme: readthedocs
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Usage: usage.md
+  - API Documentation: api.md
+  - Models: models.md
+  - Views: views.md
+  - Templates: templates.md

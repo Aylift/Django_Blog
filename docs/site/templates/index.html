@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://yourusername.github.io/django-blog-app/templates/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Templates - Django Blog App Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Templates";
+        var mkdocs_page_input_path = "templates.md";
+        var mkdocs_page_url = "/django-blog-app/templates/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Django Blog App Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../usage/">Usage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../api/">API Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../models/">Models</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Templates</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#template-directory-structure">Template Directory Structure</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#users-app-templates">Users App Templates</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#registerhtml">register.html</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#profilehtml">profile.html</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#loginhtml">login.html</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#logouthtml">logout.html</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#blog-app-templates">Blog App Templates</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#basehtml">base.html</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#homehtml">home.html</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#articlehtml">article.html</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#article_formhtml">article_form.html</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#delete_confirmhtml">delete_confirm.html</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#abouthtml">about.html</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#api-app-templates">API App Templates</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#test-apihtml">test-api.html</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Django Blog App Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Templates</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/yourusername/django-blog-app/edit/master/docs/templates.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="django-blog-app-templates-guide">Django Blog App - Templates Guide</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Templates in Django define the structure and layout of the HTML pages. The Django Blog App uses templates to render pages for user authentication, profile management, blog articles, and API responses.</p>
+<h2 id="template-directory-structure">Template Directory Structure</h2>
+<p>The templates are organized as follows:</p>
+<pre><code>project_root/
+│── users/
+│   ├── templates/
+│   │   ├── users/
+│   │   │   ├── register.html
+│   │   │   ├── profile.html
+│   │   │   ├── login.html
+│   │   │   ├── logout.html
+│── blog/
+│   ├── templates/
+│   │   ├── blog/
+│   │   │   ├── base.html
+│   │   │   ├── home.html
+│   │   │   ├── article.html
+│   │   │   ├── article_form.html
+│   │   │   ├── delete_confirm.html
+│   │   │   ├── about.html
+│── API/
+│   ├── templates/
+│   │   ├── API/
+│   │   │   ├── test-api.html
+</code></pre>
+<h2 id="users-app-templates">Users App Templates</h2>
+<h3 id="registerhtml"><code>register.html</code></h3>
+<ul>
+<li>Displays the user registration form.</li>
+<li>Uses <code>{% crispy form %}</code> if Django Crispy Forms is installed.</li>
+<li>Includes messages for successful registration.</li>
+</ul>
+<h3 id="profilehtml"><code>profile.html</code></h3>
+<ul>
+<li>Displays and allows users to update their profile.</li>
+<li>Includes profile picture upload functionality.</li>
+</ul>
+<h3 id="loginhtml"><code>login.html</code></h3>
+<ul>
+<li>Provides a login form for users.</li>
+<li>Uses <code>{% csrf_token %}</code> for security.</li>
+<li>Redirects authenticated users to their profile.</li>
+</ul>
+<h3 id="logouthtml"><code>logout.html</code></h3>
+<ul>
+<li>Displays a logout confirmation message.</li>
+<li>Provides a link to log back in.</li>
+</ul>
+<h2 id="blog-app-templates">Blog App Templates</h2>
+<h3 id="basehtml"><code>base.html</code></h3>
+<ul>
+<li>Defines a common structure for all pages.</li>
+<li>Includes navigation bar and footer.</li>
+<li>Uses <code>{% block content %}</code> to inject page-specific content.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;title&gt;{% block title %}Django Blog{% endblock %}&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav&gt;
+        &lt;a href=&quot;{% url 'home' %}&quot;&gt;Home&lt;/a&gt;
+        &lt;a href=&quot;{% url 'about' %}&quot;&gt;About&lt;/a&gt;
+        &lt;a href=&quot;{% url 'login' %}&quot;&gt;Login&lt;/a&gt;
+        &lt;a href=&quot;{% url 'logout' %}&quot;&gt;Logout&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        {% block content %}{% endblock %}
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="homehtml"><code>home.html</code></h3>
+<ul>
+<li>Displays a list of articles.</li>
+<li>Uses a <code>for</code> loop to iterate through posts.</li>
+<li>Implements pagination.</li>
+</ul>
+<h3 id="articlehtml"><code>article.html</code></h3>
+<ul>
+<li>Displays the details of a single article.</li>
+<li>Shows title, content, author, and date.</li>
+</ul>
+<h3 id="article_formhtml"><code>article_form.html</code></h3>
+<ul>
+<li>Used for creating and updating articles.</li>
+<li>Includes fields for title and content.</li>
+<li>Form submission handled via <code>{% csrf_token %}</code>.</li>
+</ul>
+<h3 id="delete_confirmhtml"><code>delete_confirm.html</code></h3>
+<ul>
+<li>Asks users to confirm before deleting an article.</li>
+<li>Uses Django's <code>{% url 'article-delete' article.pk %}</code>.</li>
+</ul>
+<h3 id="abouthtml"><code>about.html</code></h3>
+<ul>
+<li>Static page displaying information about the blog.</li>
+</ul>
+<h2 id="api-app-templates">API App Templates</h2>
+<h3 id="test-apihtml"><code>test-api.html</code></h3>
+<ul>
+<li>Simple test page to confirm API functionality.</li>
+<li>Can be extended with JavaScript to test API endpoints interactively.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Templates structure the frontend of the Django Blog App. They use Django’s templating engine to render dynamic content and follow best practices with inheritance and reusable components.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../views/" class="btn btn-neutral float-left" title="Views"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/yourusername/django-blog-app" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../views/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

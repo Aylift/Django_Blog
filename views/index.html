@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://yourusername.github.io/django-blog-app/views/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Views - Django Blog App Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Views";
+        var mkdocs_page_input_path = "views.md";
+        var mkdocs_page_url = "/django-blog-app/views/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Django Blog App Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../usage/">Usage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../api/">API Documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../models/">Models</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Views</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#users-app-views">Users App Views</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#registerrequest">register(request)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#profilerequest">profile(request)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#blog-app-views">Blog App Views</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#homerequest">home(request)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#aboutrequest">about(request)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#class-based-views-for-articles">Class-Based Views for Articles</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#api-app-views">API App Views</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#getallarticles">GetAllArticles</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getarticle">GetArticle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#createarticle">CreateArticle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#test_apirequest">test_api(request)</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../templates/">Templates</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Django Blog App Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Views</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/yourusername/django-blog-app/edit/master/docs/views.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="django-blog-app-views-documentation">Django Blog App - Views Documentation</h1>
+<h2 id="users-app-views">Users App Views</h2>
+<h3 id="registerrequest"><code>register(request)</code></h3>
+<p>Handles user registration.
+- If <code>POST</code>, processes form submission and creates a new user.
+- Displays a success message and redirects to login on success.
+- If <code>GET</code>, displays the registration form.</p>
+<pre><code class="language-python">def register(request):
+    if request.method == &quot;POST&quot;:
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, f&quot;Dear {username}, you have been successfully signed up!&quot;)
+            return redirect('login')
+    else:
+        form = UserRegisterForm()
+    return render(request, 'users/register.html', {'form': form})
+</code></pre>
+<h3 id="profilerequest"><code>profile(request)</code></h3>
+<p>Handles user profile updates.
+- If <code>POST</code>, updates user and profile details.
+- Displays a success message and redirects to profile on success.
+- If <code>GET</code>, loads existing user and profile forms.</p>
+<pre><code class="language-python">@login_required
+def profile(request):
+    if request.method == 'POST':
+        user_form = UserUpdateForm(request.POST, instance=request.user)
+        profile_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, &quot;Your profile's been updated!&quot;)
+            return redirect('profile')
+    else:
+        user_form = UserUpdateForm(instance=request.user)
+        profile_form = ProfileUpdateForm(instance=request.user.profile)
+    return render(request, 'users/profile.html', {'user_form': user_form, 'profile_form': profile_form})
+</code></pre>
+<h2 id="blog-app-views">Blog App Views</h2>
+<h3 id="homerequest"><code>home(request)</code></h3>
+<p>Displays all blog posts on the homepage.</p>
+<pre><code class="language-python">def home(request):
+    return render(request, 'blog/home.html', {'title': 'Home', 'posts': Article.objects.all()})
+</code></pre>
+<h3 id="aboutrequest"><code>about(request)</code></h3>
+<p>Displays the about page.</p>
+<pre><code class="language-python">def about(request):
+    return render(request, 'blog/about.html', {'title': 'About'})
+</code></pre>
+<h3 id="class-based-views-for-articles">Class-Based Views for Articles</h3>
+<ul>
+<li><strong><code>ArticleListView</code></strong>: Lists articles with pagination.</li>
+<li><strong><code>ArticleDetailView</code></strong>: Displays article details.</li>
+<li><strong><code>ArticleCreateView</code></strong>: Allows logged-in users to create articles.</li>
+<li><strong><code>ArticleUpdateView</code></strong>: Allows article authors to update their posts.</li>
+<li><strong><code>ArticleDeleteView</code></strong>: Allows article authors to delete their posts.</li>
+</ul>
+<pre><code class="language-python">class ArticleListView(ListView):
+    model = Article
+    template_name = 'blog/home.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 4
+</code></pre>
+<pre><code class="language-python">class ArticleCreateView(LoginRequiredMixin, CreateView):
+    model = Article
+    template_name = 'blog/article_form.html'
+    fields = ['title', 'content']
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+</code></pre>
+<h2 id="api-app-views">API App Views</h2>
+<h3 id="getallarticles"><code>GetAllArticles</code></h3>
+<p>Returns a list of all articles.</p>
+<pre><code class="language-python">class GetAllArticles(generics.ListAPIView):
+    serializer_class = ArticleSerializer
+    queryset = Article.objects.all()
+</code></pre>
+<h3 id="getarticle"><code>GetArticle</code></h3>
+<p>Retrieves a single article by ID.</p>
+<pre><code class="language-python">class GetArticle(generics.RetrieveAPIView):
+    serializer_class = ArticleSerializer
+    queryset = Article
+</code></pre>
+<h3 id="createarticle"><code>CreateArticle</code></h3>
+<p>Allows authenticated users to create articles.</p>
+<pre><code class="language-python">class CreateArticle(generics.CreateAPIView):
+    serializer_class = ArticleSerializer
+    permission_classes = [IsAuthenticated]
+</code></pre>
+<h3 id="test_apirequest"><code>test_api(request)</code></h3>
+<p>Renders an API test page.</p>
+<pre><code class="language-python">def test_api(request):
+    return render(request, 'API/test-api.html')
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../models/" class="btn btn-neutral float-left" title="Models"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../templates/" class="btn btn-neutral float-right" title="Templates">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/yourusername/django-blog-app" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../models/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../templates/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

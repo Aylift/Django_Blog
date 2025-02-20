@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://yourusername.github.io/django-blog-app/</loc>
+         <loc>https://Aylift.github.io/Django_Blog/</loc>
          <lastmod>2025-02-20</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/django-blog-app/api/</loc>
+         <loc>https://Aylift.github.io/Django_Blog/api/</loc>
          <lastmod>2025-02-20</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/django-blog-app/installation/</loc>
+         <loc>https://Aylift.github.io/Django_Blog/installation/</loc>
          <lastmod>2025-02-20</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/django-blog-app/models/</loc>
+         <loc>https://Aylift.github.io/Django_Blog/models/</loc>
          <lastmod>2025-02-20</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/django-blog-app/templates/</loc>
+         <loc>https://Aylift.github.io/Django_Blog/templates/</loc>
          <lastmod>2025-02-20</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/django-blog-app/usage/</loc>
+         <loc>https://Aylift.github.io/Django_Blog/usage/</loc>
          <lastmod>2025-02-20</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/django-blog-app/views/</loc>
+         <loc>https://Aylift.github.io/Django_Blog/views/</loc>
          <lastmod>2025-02-20</lastmod>
     </url>
 </urlset>
